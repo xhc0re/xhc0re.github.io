@@ -6,12 +6,23 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
+    --background-color: #f0f0f0;
+    --text-color: #333;
+}
+
+.dark-theme {
+    --background-color: #333;
+    --text-color: #f0f0f0;
 }
 
 h1 {
     font-size: 3rem;
-    color: #333;
     margin-bottom: 20px;
 }
 
@@ -24,6 +35,8 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 button {
@@ -35,8 +48,15 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin: 5px;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+#toggleThemeButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
